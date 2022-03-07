@@ -1,21 +1,31 @@
 # Queue
 
-**TODO: Add description**
+## Introduction
 
-## Installation
+This repository contains the code developed to fulfill the challenge #16 of the Elixir track from Rocketseats Ignite course.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `queue` to your list of dependencies in `mix.exs`:
+The challenge objective was to build a Queue app with GenServers.
 
-```elixir
-def deps do
-  [
-    {:queue, "~> 0.1.0"}
-  ]
-end
+## Commands
+
+Since this project doesn't have any dependencies, to run it you just neet to clone this repo and run the following commands:
+
+To start the iex inside the project:
+```sh
+$ iex -S mix
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/queue](https://hexdocs.pm/queue).
+To start the Queue with an initial state:
+```sh
+$ {:ok, pid} = Queue.start_link([1, 2, 3])
+```
 
+To add an element to the queue:
+```sh
+$ Queue.enqueue(pid, element)
+```
+
+To remove an element from the queue:
+```sh
+$ Queue.dequeue(pid)
+```
